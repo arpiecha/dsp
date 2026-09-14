@@ -9,35 +9,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#1B2B6B;--navy-dark:#0F1A45;--white:#FFFFFF;--off:#F9F9F7;--gray:#6B7280;--light:#EBEBEB;--text:#111111; }
+    :root { --gold:#A16207;--gold-dark:#854D0E;--yellow:#EAB308;--yellow-dark:#CA8A04;--white:#FFFFFF;--off:#F9F9F7;--gray:#6B7280;--light:#EBEBEB;--text:#111111; }
     html { scroll-behavior: smooth; }
     body { font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.6; }
 
     nav { display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--light);transition:padding 0.3s; }
     .logo img { height:38px;display:block; }
-    .logo-text { font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy); }
+    .logo-text { font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold); }
     .nav-links { display:flex;gap:2.5rem;align-items:center; }
     .nav-links a { color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s; }
-    .nav-links a:hover { color:var(--navy); }
-    .nav-phone { color:var(--navy)!important;font-weight:600!important; }
-    .nav-cta { background:var(--navy);color:white!important;padding:10px 22px;border-radius:3px;font-size:12px!important;font-weight:600!important;letter-spacing:0.06em!important; }
-    .nav-cta:hover { background:var(--navy-dark)!important; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-phone { color:var(--gold)!important;font-weight:600!important; }
+    .nav-cta { background:var(--yellow);color:var(--text)!important;padding:10px 22px;border-radius:3px;font-size:12px!important;font-weight:600!important;letter-spacing:0.06em!important; }
+    .nav-cta:hover { background:var(--yellow-dark)!important; }
 
 
 
     .hero { margin-top:80px;padding:5rem 3rem 4rem;border-bottom:1px solid var(--light); }
     .hero-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center; }
     h1 { font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:500;color:var(--text);line-height:0.95;letter-spacing:-2px; }
-    h1 em { font-style:italic;color:var(--navy); }
+    h1 em { font-style:italic;color:var(--gold); }
     .hero-right p { font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:2rem; }
     .hero-stats { display:flex;gap:3rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--light); }
-    .stat-num { font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--navy);line-height:1; }
+    .stat-num { font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--gold);line-height:1; }
     .stat-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px; }
     .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
-    .btn-navy { background:var(--navy);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s; }
-    .btn-navy:hover { background:var(--navy-dark); }
+    .btn-gold { background:var(--yellow);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s; }
+    .btn-gold:hover { background:var(--yellow-dark); }
     .btn-outline { border:1px solid var(--light);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.06em;transition:border-color 0.2s; }
-    .btn-outline:hover { border-color:var(--navy);color:var(--navy); }
+    .btn-outline:hover { border-color:var(--gold);color:var(--gold); }
 
     /* HERO INTERIOR GALLERY */
     .hero-gallery-grid { display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:4px; }
@@ -47,18 +47,18 @@
     .hg-item.tall { grid-row:span 2; }
 
     /* TICKER */
-    .ticker { background:var(--navy);color:white;padding:12px 0;overflow:hidden;white-space:nowrap; }
+    .ticker { background:var(--yellow);color:var(--text);padding:12px 0;overflow:hidden;white-space:nowrap; }
     .ticker-inner { display:inline-flex;gap:3rem;animation:ticker 25s linear infinite; }
     .ticker-item { font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6; }
-    .ticker-dot { color:rgba(255,255,255,0.2); }
+    .ticker-dot { color:rgba(0,0,0,0.25); }
     @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
     /* SECTIONS */
     .section { max-width:1200px;margin:0 auto;padding:6rem 2rem; }
     .section-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem; }
-    .eyebrow { font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);margin-bottom:0.75rem; }
+    .eyebrow { font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem; }
     h2 { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.15;color:var(--text); }
-    .view-all { font-size:12px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--navy);padding-bottom:2px;transition:opacity 0.2s; }
+    .view-all { font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity 0.2s; }
     .view-all:hover { opacity:0.6; }
 
     /* PROJECTS */
@@ -67,7 +67,7 @@
     .project-card { position:relative;overflow:hidden;background:#f0f0f0; }
     .project-card img,.project-card .proj-placeholder { width:100%;display:block;object-fit:cover;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
     .project-card:hover img { transform:scale(1.04); }
-    .proj-placeholder { background:linear-gradient(135deg,var(--navy),#1a3a5c);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:2rem; }
+    .proj-placeholder { background:linear-gradient(135deg,#A16207,#5C3A0A);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:2rem; }
     .project-overlay { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,0.75)); }
     .project-status { display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:0.5rem; }
     .status-sold { background:rgba(15,110,86,0.9);color:white; }
@@ -81,7 +81,7 @@
     .forsale-section { background:var(--off);padding:6rem 0;border-bottom:1px solid var(--light); }
     .forsale-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
     .forsale-head { display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap; }
-    .status-available { background:rgba(27,43,107,0.92);color:white; }
+    .status-available { background:rgba(161,98,7,0.92);color:white; }
     .forsale-facts { display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--light); }
     .fact-num { font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--text);line-height:1; }
     .fact-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px; }
@@ -103,7 +103,7 @@
     .brands-inner { max-width:1200px;margin:0 auto; }
     .brands-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light);border:1px solid var(--light);margin-top:3rem; }
     .brand-item { background:var(--white);padding:2.5rem 2rem;min-width:0;overflow-wrap:break-word; }
-    .brand-num { font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--navy);opacity:0.15;line-height:1;margin-bottom:1rem;font-weight:500; }
+    .brand-num { font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:0.15;line-height:1;margin-bottom:1rem;font-weight:500; }
     .brand-name { font-size:13px;font-weight:700;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em;text-transform:uppercase; }
     .brand-desc { font-size:13px;color:var(--gray);line-height:1.7; }
 
@@ -117,42 +117,42 @@
 
     /* TESTIMONIALS */
     .testimonials-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem; }
-    .testimonial-card { padding:2rem 0;border-top:2px solid var(--navy); }
-    .stars { color:var(--navy);font-size:12px;letter-spacing:3px;margin-bottom:1rem; }
+    .testimonial-card { padding:2rem 0;border-top:2px solid var(--gold); }
+    .stars { color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:1rem; }
     .testimonial-text { font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:1.5rem;font-style:italic; }
     .testimonial-author { font-size:12px;font-weight:600;color:var(--text);letter-spacing:0.05em;text-transform:uppercase; }
 
     /* BIO */
-    .bio-section { background:var(--navy);padding:7rem 2rem; }
+    .bio-section { background:var(--yellow);padding:7rem 2rem; }
     .bio-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center; }
     .bio-img img { width:100%;height:560px;object-fit:cover;display:block; }
-    .bio-text .eyebrow { color:rgba(255,255,255,0.4); }
-    .bio-text h2 { color:white;margin-bottom:2rem; }
-    .bio-text p { font-size:15px;color:rgba(255,255,255,0.55);line-height:1.9;margin-bottom:1.25rem; }
-    .btn-white { display:inline-block;border:1px solid rgba(255,255,255,0.3);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;margin-top:1.5rem;transition:border-color 0.2s; }
-    .btn-white:hover { border-color:white; }
+    .bio-text .eyebrow { color:rgba(0,0,0,0.5); }
+    .bio-text h2 { color:var(--text);margin-bottom:2rem; }
+    .bio-text p { font-size:15px;color:rgba(0,0,0,0.68);line-height:1.9;margin-bottom:1.25rem; }
+    .btn-white { display:inline-block;border:1px solid rgba(0,0,0,0.35);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;margin-top:1.5rem;transition:border-color 0.2s; }
+    .btn-white:hover { border-color:var(--text); }
 
     /* CONTACT */
     .contact-section { padding:7rem 2rem; }
     .contact-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start; }
     .contact-info-items { display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem; }
     .contact-item { display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray); }
-    .contact-item-icon { color:var(--navy);width:20px; }
+    .contact-item-icon { color:var(--gold);width:20px; }
     .contact-form { display:flex;flex-direction:column;gap:12px; }
     .form-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
     .contact-form input,.contact-form select,.contact-form textarea { width:100%;padding:13px 16px;background:var(--off);border:1px solid var(--light);border-radius:3px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color 0.2s; }
-    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus { border-color:var(--navy);background:white; }
+    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus { border-color:var(--gold);background:white; }
     .contact-form textarea { height:120px;resize:vertical; }
-    .submit-btn { background:var(--navy);color:white;padding:14px;border:none;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s; }
-    .submit-btn:hover { background:var(--navy-dark); }
+    .submit-btn { background:var(--yellow);color:var(--text);padding:14px;border:none;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s; }
+    .submit-btn:hover { background:var(--yellow-dark); }
     .form-success { display:none;background:#E1F5EE;color:#0F6E56;padding:12px;border-radius:3px;font-size:13px;text-align:center; }
 
-    footer { background:var(--navy);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
-    .footer-logo { font-family:'Cormorant Garamond',serif;font-size:18px;color:white; }
-    footer p { font-size:12px;color:rgba(255,255,255,0.3); }
+    footer { background:var(--yellow);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text); }
+    footer p { font-size:12px;color:rgba(0,0,0,0.5); }
     .footer-links { display:flex;gap:1.5rem; }
-    .footer-links a { font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s; }
-    .footer-links a:hover { color:white; }
+    .footer-links a { font-size:12px;color:rgba(0,0,0,0.6);text-decoration:none;transition:color 0.2s; }
+    .footer-links a:hover { color:var(--text); }
 
     @media (max-width:900px) {
       nav { padding:1rem 1.5rem; } .nav-links { display:none; }
@@ -229,7 +229,7 @@
         </div>
       </div>
       <div style="display:flex;gap:1rem;margin-top:1.25rem;flex-wrap:wrap;">
-        <a href="#projects" class="btn-navy">View Projects</a>
+        <a href="#projects" class="btn-gold">View Projects</a>
         <a href="#contact" class="btn-outline">Get In Touch</a>
       </div>
     </div>
@@ -294,7 +294,7 @@
     </div>
 
     <div style="margin-top:2rem;">
-      <a href="#contact" style="display:inline-block;background:var(--navy);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Request Details</a>
+      <a href="#contact" style="display:inline-block;background:var(--yellow);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Request Details</a>
     </div>
   </div>
 </div>
@@ -345,7 +345,7 @@
         <div class="project-specs">5 bed · 4.5 bath · 4,100 sqft · Built 2025</div>
       </div>
     </div>
-    <div class="project-card" style="background:linear-gradient(135deg,#1B2B6B,#0F1A45);">
+    <div class="project-card" style="background:linear-gradient(135deg,#A16207,#5C3A0A);">
       <div style="height:320px;display:flex;align-items:center;justify-content:center;">
         <div style="text-align:center;">
           <div style="font-size:2rem;margin-bottom:0.5rem;opacity:0.3;">🏗️</div>
@@ -361,7 +361,7 @@
   </div>
 
   <div class="projects-row" style="margin-top:3px;">
-    <div class="project-card" style="background:linear-gradient(135deg,#1B2B6B,#0F1A45);">
+    <div class="project-card" style="background:linear-gradient(135deg,#A16207,#5C3A0A);">
       <div style="height:320px;display:flex;align-items:center;justify-content:center;">
         <div style="text-align:center;">
           <div style="font-size:2rem;margin-bottom:0.5rem;opacity:0.3;">🏗️</div>
