@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSP Renovation — Chicagoland Real Estate Development</title>
+  <meta name="description" content="DSP Renovation builds high-quality custom homes across Chicagoland. Top-rated construction company with 25+ years of experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#1B2B6B;--navy-dark:#0F1A45;--white:#FFFFFF;--off:#F9F9F7;--gray:#6B7280;--light:#EBEBEB;--text:#111111; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.6; }
+
+    nav { display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--light);transition:padding 0.3s; }
+    .logo img { height:38px;display:block; }
+    .logo-text { font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy); }
+    .nav-links { display:flex;gap:2.5rem;align-items:center; }
+    .nav-links a { color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s; }
+    .nav-links a:hover { color:var(--navy); }
+    .nav-phone { color:var(--navy)!important;font-weight:600!important; }
+    .nav-cta { background:var(--navy);color:white!important;padding:10px 22px;border-radius:3px;font-size:12px!important;font-weight:600!important;letter-spacing:0.06em!important; }
+    .nav-cta:hover { background:var(--navy-dark)!important; }
+
+
+
+    .hero { margin-top:80px;padding:5rem 3rem 4rem;border-bottom:1px solid var(--light); }
+    .hero-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center; }
+    h1 { font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:500;color:var(--text);line-height:0.95;letter-spacing:-2px; }
+    h1 em { font-style:italic;color:var(--navy); }
+    .hero-right p { font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:2rem; }
+    .hero-stats { display:flex;gap:3rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--light); }
+    .stat-num { font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--navy);line-height:1; }
+    .stat-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px; }
+    .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
+    .btn-navy { background:var(--navy);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s; }
+    .btn-navy:hover { background:var(--navy-dark); }
+    .btn-outline { border:1px solid var(--light);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.06em;transition:border-color 0.2s; }
+    .btn-outline:hover { border-color:var(--navy);color:var(--navy); }
+
+    /* HERO INTERIOR GALLERY */
+    .hero-gallery-grid { display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:4px; }
+    .hg-item { overflow:hidden;border-radius:2px; }
+    .hg-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .hg-item:hover img { transform:scale(1.05); }
+    .hg-item.tall { grid-row:span 2; }
+
+    /* TICKER */
+    .ticker { background:var(--navy);color:white;padding:12px 0;overflow:hidden;white-space:nowrap; }
+    .ticker-inner { display:inline-flex;gap:3rem;animation:ticker 25s linear infinite; }
+    .ticker-item { font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6; }
+    .ticker-dot { color:rgba(255,255,255,0.2); }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* SECTIONS */
+    .section { max-width:1200px;margin:0 auto;padding:6rem 2rem; }
+    .section-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem; }
+    .eyebrow { font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);margin-bottom:0.75rem; }
+    h2 { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.15;color:var(--text); }
+    .view-all { font-size:12px;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--navy);padding-bottom:2px;transition:opacity 0.2s; }
+    .view-all:hover { opacity:0.6; }
+
+    /* PROJECTS */
+    .projects-featured { display:grid;grid-template-columns:1.4fr 1fr;gap:3px;margin-bottom:3px; }
+    .projects-row { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+    .project-card { position:relative;overflow:hidden;background:#f0f0f0; }
+    .project-card img,.project-card .proj-placeholder { width:100%;display:block;object-fit:cover;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .project-card:hover img { transform:scale(1.04); }
+    .proj-placeholder { background:linear-gradient(135deg,var(--navy),#1a3a5c);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:2rem; }
+    .project-overlay { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,0.75)); }
+    .project-status { display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:0.5rem; }
+    .status-sold { background:rgba(15,110,86,0.9);color:white; }
+    .status-progress { background:rgba(146,64,14,0.9);color:white; }
+    .status-contract { background:rgba(91,33,182,0.9);color:white; }
+    .project-name { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:white;margin-bottom:3px; }
+    .project-meta { font-size:12px;color:rgba(255,255,255,0.65); }
+    .project-specs { font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px; }
+
+    /* FONTANA GALLERY */
+    .forsale-section { background:var(--off);padding:6rem 0;border-bottom:1px solid var(--light); }
+    .forsale-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
+    .forsale-head { display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap; }
+    .status-available { background:rgba(27,43,107,0.92);color:white; }
+    .forsale-facts { display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--light); }
+    .fact-num { font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--text);line-height:1; }
+    .fact-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px; }
+    .forsale-grid { display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 260px 260px;gap:3px;margin-top:2.5rem; }
+    .fs1 { grid-column:span 2;grid-row:span 2; }
+    .fs-item { overflow:hidden; }
+    .fs-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .fs-item:hover img { transform:scale(1.04); }
+    .fontana-section { background:var(--off);padding:6rem 0; }
+    .fontana-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
+    .fontana-grid { display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 260px;gap:3px;margin-top:2rem; }
+    .fg1 { grid-column:span 2;grid-row:span 2; }
+    .fg-item { overflow:hidden; }
+    .fg-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .fg-item:hover img { transform:scale(1.04); }
+
+    /* BRANDS */
+    .brands-section { padding:6rem 2rem; }
+    .brands-inner { max-width:1200px;margin:0 auto; }
+    .brands-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light);border:1px solid var(--light);margin-top:3rem; }
+    .brand-item { background:var(--white);padding:2.5rem 2rem;min-width:0;overflow-wrap:break-word; }
+    .brand-num { font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--navy);opacity:0.15;line-height:1;margin-bottom:1rem;font-weight:500; }
+    .brand-name { font-size:13px;font-weight:700;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em;text-transform:uppercase; }
+    .brand-desc { font-size:13px;color:var(--gray);line-height:1.7; }
+
+    /* GALLERY */
+    .gallery-grid { display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:3px; }
+    .g1 { grid-column:span 7; } .g2 { grid-column:span 5; }
+    .g3 { grid-column:span 4; } .g4 { grid-column:span 4; } .g5 { grid-column:span 4; }
+    .gallery-grid .gi { overflow:hidden; }
+    .gallery-grid img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .gallery-grid .gi:hover img { transform:scale(1.03); }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem; }
+    .testimonial-card { padding:2rem 0;border-top:2px solid var(--navy); }
+    .stars { color:var(--navy);font-size:12px;letter-spacing:3px;margin-bottom:1rem; }
+    .testimonial-text { font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:1.5rem;font-style:italic; }
+    .testimonial-author { font-size:12px;font-weight:600;color:var(--text);letter-spacing:0.05em;text-transform:uppercase; }
+
+    /* BIO */
+    .bio-section { background:var(--navy);padding:7rem 2rem; }
+    .bio-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center; }
+    .bio-img img { width:100%;height:560px;object-fit:cover;display:block; }
+    .bio-text .eyebrow { color:rgba(255,255,255,0.4); }
+    .bio-text h2 { color:white;margin-bottom:2rem; }
+    .bio-text p { font-size:15px;color:rgba(255,255,255,0.55);line-height:1.9;margin-bottom:1.25rem; }
+    .btn-white { display:inline-block;border:1px solid rgba(255,255,255,0.3);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;margin-top:1.5rem;transition:border-color 0.2s; }
+    .btn-white:hover { border-color:white; }
+
+    /* CONTACT */
+    .contact-section { padding:7rem 2rem; }
+    .contact-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start; }
+    .contact-info-items { display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem; }
+    .contact-item { display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray); }
+    .contact-item-icon { color:var(--navy);width:20px; }
+    .contact-form { display:flex;flex-direction:column;gap:12px; }
+    .form-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+    .contact-form input,.contact-form select,.contact-form textarea { width:100%;padding:13px 16px;background:var(--off);border:1px solid var(--light);border-radius:3px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color 0.2s; }
+    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus { border-color:var(--navy);background:white; }
+    .contact-form textarea { height:120px;resize:vertical; }
+    .submit-btn { background:var(--navy);color:white;padding:14px;border:none;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s; }
+    .submit-btn:hover { background:var(--navy-dark); }
+    .form-success { display:none;background:#E1F5EE;color:#0F6E56;padding:12px;border-radius:3px;font-size:13px;text-align:center; }
+
+    footer { background:var(--navy);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif;font-size:18px;color:white; }
+    footer p { font-size:12px;color:rgba(255,255,255,0.3); }
+    .footer-links { display:flex;gap:1.5rem; }
+    .footer-links a { font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s; }
+    .footer-links a:hover { color:white; }
+
+    @media (max-width:900px) {
+      nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+
+      .hero { padding:3rem 1.5rem 3rem; } .hero-inner { grid-template-columns:1fr;gap:2rem; }
+      .hero-inner > * { min-width:0; }
+      h1 { font-size:3.5rem; }
+      .hero-stats { gap:1.5rem 2rem;flex-wrap:wrap; }
+      .projects-featured { grid-template-columns:1fr; }
+      .projects-row { grid-template-columns:1fr 1fr; }
+      .fontana-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+      .fg1 { grid-column:span 2;grid-row:span 1; }
+      .forsale-section { padding:4rem 0; }
+      .forsale-inner { padding:0 1.5rem; }
+      .forsale-facts { gap:1.5rem 2rem; }
+      .forsale-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:2rem; }
+      .fs-item { height:190px; }
+      .fs1 { grid-column:span 2;grid-row:span 1;height:240px; }
+      .brands-grid { grid-template-columns:1fr 1fr; }
+      .gallery-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+      .g1,.g2,.g3,.g4,.g5 { grid-column:span 1; }
+      .testimonials-grid { grid-template-columns:1fr; }
+      .bio-inner { grid-template-columns:1fr;gap:3rem; }
+      .contact-inner { grid-template-columns:1fr;gap:3rem; }
+      .form-row { grid-template-columns:1fr; }
+      footer { flex-direction:column;text-align:center;padding:2rem 1.5rem; }
+    }
+
+    @media (max-width:400px) {
+      .brands-section { padding:4rem 1.25rem; }
+      .brand-item { padding:2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="logo">
+    <div class="logo-text">DSP Renovation</div>
+  </div>
+  <div class="nav-links">
+    <a href="#for-sale">For Sale</a>
+    <a href="#projects">Projects</a>
+    <a href="#craftsmanship">Craftsmanship</a>
+    <a href="#about">About</a>
+    <a href="tel:7736901300" class="nav-phone">(773) 690-1300</a>
+    <a href="#contact" class="nav-cta">Request Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO TEXT -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Dream.<br><em>Design.</em><br>Build.</h1>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:1.5rem;max-width:420px;">Top-rated construction company in Chicagoland. We build homes with uncompromising craftsmanship and a personal touch — transforming your vision into reality since 1999.</p>
+      <div class="hero-stats">
+        <div><div class="stat-num">25+</div><div class="stat-lbl">Years Experience</div></div>
+        <div><div class="stat-num">$1.8M+</div><div class="stat-lbl">Avg Home Value</div></div>
+        <div><div class="stat-num">5★</div><div class="stat-lbl">Client Rating</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-lbl">Custom Built</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-gallery-grid">
+        <div class="hg-item tall">
+          <img src="fontana-kitchen2.jpg" alt="Gourmet Kitchen">
+        </div>
+        <div class="hg-item">
+          <img src="5.webp" alt="Interior">
+        </div>
+        <div class="hg-item">
+          <img src="17.JPG" alt="Interior">
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;margin-top:1.25rem;flex-wrap:wrap;">
+        <a href="#projects" class="btn-navy">View Projects</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Custom Homes</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Pella Windows</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Wolf & Sub-Zero</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">White Oak Hardwood</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Custom Cabinetry</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Porcelain Tile</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Glenview · Northfield · Chicagoland</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Custom Homes</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Pella Windows</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Wolf & Sub-Zero</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">White Oak Hardwood</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Custom Cabinetry</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Porcelain Tile</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Glenview · Northfield · Chicagoland</span><span class="ticker-dot">·</span>
+  </div>
+</div>
+
+<!-- CURRENT HOME FOR SALE -->
+<div class="forsale-section" id="for-sale">
+  <div class="forsale-inner">
+    <div class="forsale-head">
+      <div>
+        <div class="eyebrow">Now Available</div>
+        <h2>Current Home For Sale</h2>
+        <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:0.75rem;max-width:620px;">
+          <strong style="color:var(--text);">310 Nottingham Ave.</strong> — Newly built and move-in ready. White oak
+          hardwood throughout, custom cabinetry with a quartz island and Wolf range, a primary suite with a soaking tub
+          and marble bath, second-floor laundry, and a finished lower level with a wet bar opening to a fenced yard and
+          covered patio.
+        </p>
+      </div>
+      <a href="#contact" class="view-all">Schedule a Showing</a>
+    </div>
+
+    <div class="forsale-facts">
+      <div><div class="fact-num">5</div><div class="fact-lbl">Bedrooms</div></div>
+      <div><div class="fact-num">5</div><div class="fact-lbl">Full Baths</div></div>
+      <div><div class="fact-num">4,848</div><div class="fact-lbl">Square Feet</div></div>
+      <div><div class="fact-num">3-Car</div><div class="fact-lbl">Attached Garage</div></div>
+      <div><div class="fact-num">2025</div><div class="fact-lbl">Newly Built</div></div>
+    </div>
+
+    <div class="forsale-grid">
+      <div class="fs-item fs1"><img src="nottingham-exterior.webp" alt="310 Nottingham Ave. front exterior" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-kitchen.webp" alt="Kitchen with quartz island" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-range.webp" alt="Wolf range and custom hood" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-living.webp" alt="Open living and dining" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-family.webp" alt="Family room fireplace" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-primary-bath.webp" alt="Primary bath with soaking tub" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-patio.webp" alt="Covered patio and fenced yard" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-lower.webp" alt="Finished lower level with wet bar" loading="lazy"></div>
+      <div class="fs-item"><img src="nottingham-rear.webp" alt="Rear elevation and covered patio" loading="lazy"></div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="#contact" style="display:inline-block;background:var(--navy);color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Request Details</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <div><div class="eyebrow">Our Portfolio</div><h2>Current & Past Projects</h2></div>
+    <a href="#contact" class="view-all">Inquire About Availability</a>
+  </div>
+
+  <div class="projects-featured">
+    <div class="project-card">
+      <img src="pleasant.jpg" alt="900 Pleasant Ln" style="height:500px;">
+      <div class="project-overlay">
+        <span class="project-status status-sold">Sold — $1,840,000</span>
+        <div class="project-name">900 Pleasant Ln.</div>
+        <div class="project-meta">East Glenview, IL · Glen Oak Acres</div>
+        <div class="project-specs">6 bed · 4.5 bath · 5,082 sqft · Built 2025 · Contemporary</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="lincoln.webp" alt="135 Lincoln Ave" style="height:500px;">
+      <div class="project-overlay">
+        <span class="project-status status-sold">Sold — $1,450,000</span>
+        <div class="project-name">135 Lincoln Ave.</div>
+        <div class="project-meta">Glenview, IL · Park Manor</div>
+        <div class="project-specs">5 bed · 4.5 bath · 4,300 sqft · Built 2025 · Contemporary</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-row" style="margin-top:3px;">
+    <div class="project-card">
+      <img src="fontana-exterior.jpg" alt="2442 Fontana Dr" style="height:320px;">
+      <div class="project-overlay">
+        <span class="project-status status-sold">Sold — $1,600,000</span>
+        <div class="project-name">2442 Fontana Dr.</div>
+        <div class="project-meta">Glenview, IL</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="churchill.jpg" alt="264 Churchill St" style="height:320px;">
+      <div class="project-overlay">
+        <span class="project-status status-sold">Sold — $1,799,000</span>
+        <div class="project-name">264 Churchill St.</div>
+        <div class="project-meta">Northfield, IL</div>
+        <div class="project-specs">5 bed · 4.5 bath · 4,100 sqft · Built 2025</div>
+      </div>
+    </div>
+    <div class="project-card" style="background:linear-gradient(135deg,#1B2B6B,#0F1A45);">
+      <div style="height:320px;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;opacity:0.3;">🏗️</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;">Coming Soon</div>
+        </div>
+      </div>
+      <div class="project-overlay">
+        <span class="project-status status-progress">In Progress</span>
+        <div class="project-name">310 Nottingham Ave.</div>
+        <div class="project-meta">Glenview, IL</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-row" style="margin-top:3px;">
+    <div class="project-card" style="background:linear-gradient(135deg,#1B2B6B,#0F1A45);">
+      <div style="height:320px;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;opacity:0.3;">🏗️</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;">Coming Soon</div>
+        </div>
+      </div>
+      <div class="project-overlay">
+        <span class="project-status status-progress">In Progress</span>
+        <div class="project-name">215 15th Street</div>
+        <div class="project-meta">Wilmette, IL</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="2550.webp" alt="2550 Fontana Dr" style="height:320px;">
+      <div class="project-overlay">
+        <span class="project-status status-progress">Under Construction</span>
+        <div class="project-name">2550 Fontana Dr.</div>
+        <div class="project-meta">Glenview, IL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONTANA FEATURE -->
+<div class="fontana-section" id="fontana">
+  <div class="fontana-inner">
+    <div class="eyebrow">Featured Project</div>
+    <h2>2442 Fontana Dr. — Glenview, IL</h2>
+    <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:0.75rem;max-width:600px;">Modern farmhouse design meets luxury finishes. Custom cabinetry, Viking appliances, marble tile, and white oak hardwood throughout.</p>
+    <div class="fontana-grid">
+      <div class="fg-item fg1"><img src="fontana-exterior.jpg" alt="Gourmet Kitchen"></div>
+      <div class="fg-item"><img src="fontana-kitchen1.jpg" alt="Master Shower"></div>
+      <div class="fg-item"><img src="fontana-kitchen2.jpg" alt="Bathroom"></div>
+      <div class="fg-item"><img src="fontana-bath1.jpg" alt="Master Bath"></div>
+      <div class="fg-item"><img src="fontana-bath2.jpg" alt="Kitchen Detail"></div>
+      <div class="fg-item"><img src="fontana-master-bath.jpg" alt="Foyer"></div>
+      <div class="fg-item"><img src="fontana-shower.jpg" alt="Bath"></div>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="#contact" style="display:inline-block;background:#993C1D;color:white;padding:14px 30px;border-radius:3px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Recently Sold</a>
+    </div>
+  </div>
+</div>
+
+<!-- CRAFTSMANSHIP -->
+<div class="brands-section" id="craftsmanship">
+  <div class="brands-inner">
+    <div class="eyebrow">Our Standards</div>
+    <h2>Quality Craftsmanship,<br>Name Brands.</h2>
+    <div class="brands-grid">
+      <div class="brand-item"><div class="brand-num">01</div><div class="brand-name">Custom Cabinets</div><div class="brand-desc">All cabinets — from kitchen to master bathroom — are custom hand-made to perfection.</div></div>
+      <div class="brand-item"><div class="brand-num">02</div><div class="brand-name">Pella Windows</div><div class="brand-desc">We use only the best — wooden Pella windows that bring in beautiful natural light.</div></div>
+      <div class="brand-item"><div class="brand-num">03</div><div class="brand-name">White Oak Hardwood</div><div class="brand-desc">All hardwood is white oak, sanded and stained to perfection for a timeless look.</div></div>
+      <div class="brand-item"><div class="brand-num">04</div><div class="brand-name">Porcelain Tiles</div><div class="brand-desc">Every tile is top-quality porcelain with the latest designs and patterns.</div></div>
+      <div class="brand-item"><div class="brand-num">05</div><div class="brand-name">Wolf & Sub-Zero</div><div class="brand-desc">Wolf & Sub-Zero are the only appliances we install — the gold standard in luxury kitchens.</div></div>
+      <div class="brand-item"><div class="brand-num">06</div><div class="brand-name">In-House Design</div><div class="brand-desc">Our in-house designers ensure everything reflects the latest trends and timeless elegance.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="section-header">
+    <div><div class="eyebrow">Portfolio</div><h2>A Peek Into Our Work</h2></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gi g1"><img src="14.webp" alt="DSP Renovation project"></div>
+    <div class="gi g2"><img src="3.webp" alt="DSP Renovation project"></div>
+    <div class="gi g3"><img src="2.webp" alt="DSP Renovation project"></div>
+    <div class="gi g4"><img src="1.webp" alt="DSP Renovation project"></div>
+    <div class="gi g5"><img src="16.webp" alt="DSP Renovation project"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:0;">
+  <div class="eyebrow">Client Stories</div><h2>What Our Clients Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"We couldn't be happier with our new home in Glenview — the quality and attention to detail truly exceeded our expectations. From the modern kitchen to the flawless hardwood floors, everything feels thoughtfully designed."</p>
+      <div class="testimonial-author">Jack Finnegan · Glenview, IL</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Our home in East Glenview is everything we hoped for — Pella windows let in beautiful natural light, and the white oak floors add a warm, timeless touch. No detail was overlooked."</p>
+      <div class="testimonial-author">Jess P. · East Glenview, IL</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"The thoughtful layout, upscale tile and cabinet choices reflect a sophisticated design style straight out of a luxury magazine. We couldn't be prouder to call this home."</p>
+      <div class="testimonial-author">Margaret Szeliw · Northfield, IL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="bio-section" id="about">
+  <div class="bio-inner">
+    <div class="bio-img">
+      <img src="7.webp" alt="DSP Renovation craftsmanship">
+    </div>
+    <div class="bio-text">
+      <div class="eyebrow">Our Story</div>
+      <h2>Built on 25 Years of Excellence</h2>
+      <p>Founded over 25 years ago as a boutique remodeling company — formerly known as Top Design Inc. — DSP Renovation has evolved into a trusted builder known for high-quality custom homes across Chicagoland.</p>
+      <p>From our very first project, we've remained committed to exceptional quality, uncompromising attention to detail, and a hands-on approach that ensures every home meets the highest standards.</p>
+      <p>At DSP Renovation, we don't just build houses. We build homes that last, relationships that matter, and a legacy of excellence you can count on.</p>
+      <a href="#contact" class="btn-white">Work With Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Interested in a Home?</h2>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-top:1rem;">Whether you're buying, building custom, or renovating — we'd love to hear from you. We respond within 24 hours.</p>
+      <div class="contact-info-items">
+        <div class="contact-item"><span class="contact-item-icon">📞</span>(773) 690-1300</div>
+        <div class="contact-item"><span class="contact-item-icon">📍</span>Chicagoland, Illinois</div>
+        <div class="contact-item"><span class="contact-item-icon">📱</span>@dsprenovation on Instagram</div>
+      </div>
+    </div>
+    <form class="contact-form" id="dsp-form">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <select name="subject">
+        <option value="" disabled selected>Area of Interest</option>
+        <option>Custom Home Build</option>
+        <option>Interior Renovation</option>
+        <option>Exterior Renovation</option>
+        <option>Home Addition</option>
+        <option>Buy Existing Home</option>
+        <option>Other</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about your project..."></textarea>
+      <button type="submit" class="submit-btn" id="dsp-submit">Send Message</button>
+      <div class="form-success" id="dsp-success">✓ Message received! We'll be in touch within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">DSP Renovation</div>
+  <p>© 2026 DSP Renovation, LLC. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://instagram.com/dsprenovation/" target="_blank">Instagram</a>
+    <a href="tel:7736901300">(773) 690-1300</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if(t) t.scrollIntoView({behavior:'smooth'});
+    });
+  });
+  document.getElementById('dsp-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('dsp-submit');
+    const success = document.getElementById('dsp-success');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mgojkpro', {
+        method:'POST', headers:{'Accept':'application/json'}, body:new FormData(this)
+      });
+      if(res.ok){ success.style.display='block'; this.reset(); btn.textContent='Send Message'; btn.disabled=false; }
+      else throw new Error();
+    } catch { btn.textContent='Error — try again'; btn.disabled=false; }
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').style.padding = window.scrollY > 60 ? '0.9rem 3rem' : '1.5rem 3rem';
+  });
+</script>
+</body>
+</html>
