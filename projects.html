@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — DSP Renovation</title>
+  <meta name="description" content="Every DSP Renovation home — sold, for sale and under construction — with photos, specs and details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold:#A16207;--gold-dark:#854D0E;--yellow:#EAB308;--yellow-dark:#CA8A04;--white:#FFFFFF;--off:#F9F9F7;--gray:#6B7280;--light:#EBEBEB;--text:#111111; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.6; }
+
+    nav { display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--light);transition:padding 0.3s; }
+    .logo img { height:38px;display:block; }
+    .logo-text { font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold); }
+    .nav-links { display:flex;gap:2.5rem;align-items:center; }
+    .nav-links a { color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-phone { color:var(--gold)!important;font-weight:600!important; }
+    .nav-cta { background:var(--yellow);color:var(--text)!important;padding:10px 22px;border-radius:3px;font-size:12px!important;font-weight:600!important;letter-spacing:0.06em!important; }
+    .nav-cta:hover { background:var(--yellow-dark)!important; }
+
+
+
+    .hero { margin-top:80px;padding:5rem 3rem 4rem;border-bottom:1px solid var(--light); }
+    .hero-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center; }
+    h1 { font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:500;color:var(--text);line-height:0.95;letter-spacing:-2px; }
+    h1 em { font-style:italic;color:var(--gold); }
+    .hero-right p { font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:2rem; }
+    .hero-stats { display:flex;gap:3rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--light); }
+    .stat-num { font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--gold);line-height:1; }
+    .stat-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:3px; }
+    .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
+    .btn-gold { background:var(--yellow);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s; }
+    .btn-gold:hover { background:var(--yellow-dark); }
+    .btn-outline { border:1px solid var(--light);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.06em;transition:border-color 0.2s; }
+    .btn-outline:hover { border-color:var(--gold);color:var(--gold); }
+
+    /* HERO INTERIOR GALLERY */
+    .hero-gallery-grid { display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:4px; }
+    .hg-item { overflow:hidden;border-radius:2px; }
+    .hg-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .hg-item:hover img { transform:scale(1.05); }
+    .hg-item.tall { grid-row:span 2; }
+
+    /* TICKER */
+    .ticker { background:var(--yellow);color:var(--text);padding:12px 0;overflow:hidden;white-space:nowrap; }
+    .ticker-inner { display:inline-flex;gap:3rem;animation:ticker 25s linear infinite; }
+    .ticker-item { font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6; }
+    .ticker-dot { color:rgba(0,0,0,0.25); }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* SECTIONS */
+    .section { max-width:1200px;margin:0 auto;padding:6rem 2rem; }
+    .section-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem; }
+    .eyebrow { font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem; }
+    h2 { font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.15;color:var(--text); }
+    .view-all { font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:opacity 0.2s; }
+    .view-all:hover { opacity:0.6; }
+
+    /* PROJECTS */
+    .projects-featured { display:grid;grid-template-columns:1.4fr 1fr;gap:3px;margin-bottom:3px; }
+    .projects-row { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+    .project-card { position:relative;overflow:hidden;background:#f0f0f0; }
+    .project-card img,.project-card .proj-placeholder { width:100%;display:block;object-fit:cover;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .project-card:hover img { transform:scale(1.04); }
+    .proj-placeholder { background:linear-gradient(135deg,#A16207,#5C3A0A);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:2rem; }
+    .project-overlay { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(transparent,rgba(0,0,0,0.75)); }
+    .project-status { display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:0.5rem; }
+    .status-sold { background:rgba(15,110,86,0.9);color:white; }
+    .status-progress { background:rgba(146,64,14,0.9);color:white; }
+    .status-contract { background:rgba(91,33,182,0.9);color:white; }
+    .project-name { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:white;margin-bottom:3px; }
+    .project-meta { font-size:12px;color:rgba(255,255,255,0.65); }
+    .project-specs { font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px; }
+
+    /* FONTANA GALLERY */
+    .forsale-section { background:var(--off);padding:6rem 0;border-bottom:1px solid var(--light); }
+    .forsale-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
+    .forsale-head { display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap; }
+    .status-available { background:rgba(161,98,7,0.92);color:white; }
+    .forsale-facts { display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--light); }
+    .fact-num { font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--text);line-height:1; }
+    .fact-lbl { font-size:11px;color:var(--gray);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px; }
+    .forsale-grid { display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 260px 260px;gap:3px;margin-top:2.5rem; }
+    .fs1 { grid-column:span 2;grid-row:span 2; }
+    .fs-item { overflow:hidden; }
+    .fs-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .fs-item:hover img { transform:scale(1.04); }
+    .fontana-section { background:var(--off);padding:6rem 0; }
+    .fontana-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
+    .fontana-grid { display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 260px;gap:3px;margin-top:2rem; }
+    .fg1 { grid-column:span 2;grid-row:span 2; }
+    .fg-item { overflow:hidden; }
+    .fg-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .fg-item:hover img { transform:scale(1.04); }
+
+    /* BRANDS */
+    .brands-section { padding:6rem 2rem; }
+    .brands-inner { max-width:1200px;margin:0 auto; }
+    .brands-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light);border:1px solid var(--light);margin-top:3rem; }
+    .brand-item { background:var(--white);padding:2.5rem 2rem;min-width:0;overflow-wrap:break-word; }
+    .brand-num { font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:0.15;line-height:1;margin-bottom:1rem;font-weight:500; }
+    .brand-name { font-size:13px;font-weight:700;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em;text-transform:uppercase; }
+    .brand-desc { font-size:13px;color:var(--gray);line-height:1.7; }
+
+    /* GALLERY */
+    .gallery-grid { display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:3px; }
+    .g1 { grid-column:span 7; } .g2 { grid-column:span 5; }
+    .g3 { grid-column:span 4; } .g4 { grid-column:span 4; } .g5 { grid-column:span 4; }
+    .gallery-grid .gi { overflow:hidden; }
+    .gallery-grid img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .gallery-grid .gi:hover img { transform:scale(1.03); }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem; }
+    .testimonial-card { padding:2rem 0;border-top:2px solid var(--gold); }
+    .stars { color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:1rem; }
+    .testimonial-text { font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gray);line-height:1.9;margin-bottom:1.5rem;font-style:italic; }
+    .testimonial-author { font-size:12px;font-weight:600;color:var(--text);letter-spacing:0.05em;text-transform:uppercase; }
+
+    /* BIO */
+    .bio-section { background:var(--yellow);padding:7rem 2rem; }
+    .bio-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center; }
+    .bio-img img { width:100%;height:560px;object-fit:cover;display:block; }
+    .bio-text .eyebrow { color:rgba(0,0,0,0.5); }
+    .bio-text h2 { color:var(--text);margin-bottom:2rem; }
+    .bio-text p { font-size:15px;color:rgba(0,0,0,0.68);line-height:1.9;margin-bottom:1.25rem; }
+    .btn-white { display:inline-block;border:1px solid rgba(0,0,0,0.35);color:var(--text);padding:14px 30px;border-radius:3px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;margin-top:1.5rem;transition:border-color 0.2s; }
+    .btn-white:hover { border-color:var(--text); }
+
+    /* CONTACT */
+    .contact-section { padding:7rem 2rem; }
+    .contact-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start; }
+    .contact-info-items { display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem; }
+    .contact-item { display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray); }
+    .contact-item-icon { color:var(--gold);width:20px; }
+    .contact-form { display:flex;flex-direction:column;gap:12px; }
+    .form-row { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+    .contact-form input,.contact-form select,.contact-form textarea { width:100%;padding:13px 16px;background:var(--off);border:1px solid var(--light);border-radius:3px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color 0.2s; }
+    .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus { border-color:var(--gold);background:white; }
+    .contact-form textarea { height:120px;resize:vertical; }
+    .submit-btn { background:var(--yellow);color:var(--text);padding:14px;border:none;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s; }
+    .submit-btn:hover { background:var(--yellow-dark); }
+    .form-success { display:none;background:#E1F5EE;color:#0F6E56;padding:12px;border-radius:3px;font-size:13px;text-align:center; }
+
+    footer { background:var(--yellow);padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text); }
+    footer p { font-size:12px;color:rgba(0,0,0,0.5); }
+    .footer-links { display:flex;gap:1.5rem; }
+    .footer-links a { font-size:12px;color:rgba(0,0,0,0.6);text-decoration:none;transition:color 0.2s; }
+    .footer-links a:hover { color:var(--text); }
+
+    @media (max-width:900px) {
+      nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+
+      .hero { padding:3rem 1.5rem 3rem; } .hero-inner { grid-template-columns:1fr;gap:2rem; }
+      .hero-inner > * { min-width:0; }
+      h1 { font-size:3.5rem; }
+      .hero-stats { gap:1.5rem 2rem;flex-wrap:wrap; }
+      .projects-featured { grid-template-columns:1fr; }
+      .projects-row { grid-template-columns:1fr 1fr; }
+      .fontana-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+      .fg1 { grid-column:span 2;grid-row:span 1; }
+      .forsale-section { padding:4rem 0; }
+      .forsale-inner { padding:0 1.5rem; }
+      .forsale-facts { gap:1.5rem 2rem; }
+      .forsale-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto;margin-top:2rem; }
+      .fs-item { height:190px; }
+      .fs1 { grid-column:span 2;grid-row:span 1;height:240px; }
+      .brands-grid { grid-template-columns:1fr 1fr; }
+      .gallery-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+      .g1,.g2,.g3,.g4,.g5 { grid-column:span 1; }
+      .testimonials-grid { grid-template-columns:1fr; }
+      .bio-inner { grid-template-columns:1fr;gap:3rem; }
+      .contact-inner { grid-template-columns:1fr;gap:3rem; }
+      .form-row { grid-template-columns:1fr; }
+      footer { flex-direction:column;text-align:center;padding:2rem 1.5rem; }
+    }
+
+    @media (max-width:400px) {
+      .brands-section { padding:4rem 1.25rem; }
+      .brand-item { padding:2rem 1.25rem; }
+    }
+  </style>
+
+  <style>
+    /* --- projects page ------------------------------------------------ */
+    .page-head { max-width:1200px;margin:0 auto;padding:7rem 2rem 2rem; }
+    .page-head h1 { font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:500;letter-spacing:-1px;line-height:1.05; }
+    .page-head p { font-size:15px;color:var(--gray);line-height:1.8;margin-top:1rem;max-width:620px; }
+    .page-jump { display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem; }
+    .page-jump a { font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;
+                   color:var(--text);border:1px solid var(--light);padding:9px 14px;border-radius:3px;transition:border-color 0.2s,background 0.2s; }
+    .page-jump a:hover { border-color:var(--yellow);background:var(--off); }
+    .nav-links a.here { color:var(--gold); }
+
+    /* the nav is fixed, so anchored jumps need room above the heading */
+    .listing { border-top:1px solid var(--light);padding:4rem 0;scroll-margin-top:90px; }
+    .listing:first-of-type { border-top:none; }
+    .listing-inner { max-width:1200px;margin:0 auto;padding:0 2rem; }
+    .listing.alt { background:var(--off); }
+    .listing-head { display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start; }
+    .listing-head h2 { margin-bottom:0.35rem; }
+    .listing-loc { font-size:14px;color:var(--gray); }
+    .listing-blurb { font-size:15px;color:var(--gray);line-height:1.8;margin-top:1.25rem; }
+    .spec-table { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--light);border:1px solid var(--light); }
+    .spec-cell { background:var(--white);padding:1rem 1.25rem; }
+    .listing.alt .spec-cell { background:var(--off); }
+    .spec-key { font-size:10px;color:var(--gray);letter-spacing:0.12em;text-transform:uppercase; }
+    .spec-val { font-size:15px;font-weight:600;margin-top:4px; }
+    /* The row height comes from grid-auto-rows, so a cell that spans two rows
+       is exactly twice as tall and its photo still fills it. */
+    .shots { display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:3px;margin-top:2rem; }
+    .shot { overflow:hidden;background:var(--light);cursor:zoom-in; }
+    .shot-wide { grid-column:span 2; }
+    .shot-lead { grid-column:span 2;grid-row:span 2; }
+    .shot img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .shot:hover img { transform:scale(1.04); }
+    .shot-note { grid-column:1/-1;font-size:12px;color:var(--gray);padding-top:6px; }
+    .listing-cta { margin-top:2rem; }
+
+    /* lightbox */
+    .lb { position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:2000; }
+    .lb.open { display:flex; }
+    .lb img { max-width:92vw;max-height:84vh;object-fit:contain; }
+    .lb-close,.lb-prev,.lb-next { position:absolute;background:rgba(255,255,255,0.12);color:white;border:none;cursor:pointer;
+                                  font-size:22px;line-height:1;padding:12px 16px;border-radius:3px;font-family:inherit; }
+    .lb-close { top:20px;right:20px;font-size:18px; }
+    .lb-prev { left:20px;top:50%;transform:translateY(-50%); }
+    .lb-next { right:20px;top:50%;transform:translateY(-50%); }
+    .lb-close:hover,.lb-prev:hover,.lb-next:hover { background:rgba(255,255,255,0.25); }
+    .lb-cap { position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.75);font-size:12px;letter-spacing:0.06em; }
+
+    @media (max-width:900px) {
+      .page-head { padding:6rem 1.5rem 1.5rem; }
+      .listing-inner { padding:0 1.5rem; }
+      .listing-head { grid-template-columns:1fr;gap:1.75rem; }
+      .shots { grid-template-columns:1fr 1fr;grid-auto-rows:160px; }
+      .shot-lead { grid-column:span 2;grid-row:span 2; }
+      .shot-wide { grid-column:span 2; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="logo">
+    <div class="logo-text">DSP Renovation</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html#for-sale">For Sale</a>
+    <a href="projects.html" class="here">Projects</a>
+    <a href="index.html#craftsmanship">Craftsmanship</a>
+    <a href="index.html#about">About</a>
+    <a href="tel:2247669642" class="nav-phone">(224) 766-9642</a>
+    <a href="index.html#contact" class="nav-cta">Request Consultation</a>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="eyebrow">Our Portfolio</div>
+  <h1>Current &amp; Past Projects</h1>
+  <p>Every home we have built, are building, or have for sale right now — with the details, the specs and the photos
+     for each one. Sold homes stay on the list, because the work is the point.</p>
+  <div class="page-jump"><a href="#nottingham">310 Nottingham Ave.</a><a href="#fontana-2550">2550 Fontana Dr.</a><a href="#fifteenth">215 15th Street</a><a href="#pleasant">900 Pleasant Ln.</a><a href="#lincoln">135 Lincoln Ave.</a><a href="#churchill">264 Churchill St.</a><a href="#fontana-2442">2442 Fontana Dr.</a></div>
+</div>
+
+
+<section class="listing" id="nottingham">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-available">For Sale</span>
+        <h2>310 Nottingham Ave.</h2>
+        <div class="listing-loc">Glenview, IL</div>
+        <p class="listing-blurb">Newly built and move-in ready. White oak hardwood throughout, custom cabinetry with a quartz island and Wolf range, a primary suite with a soaking tub and marble bath, second-floor laundry, and a finished lower level with a wet bar opening to a fenced yard and covered patio.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Schedule a Showing</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">For sale</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Full baths</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,848</div></div><div class="spec-cell"><div class="spec-key">Garage</div><div class="spec-val">3-car attached</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2026</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="nottingham-exterior.webp" alt="310 Nottingham Ave. — Front exterior" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen"><img src="nottingham-kitchen.webp" alt="310 Nottingham Ave. — Kitchen" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Range and hood"><img src="nottingham-range.webp" alt="310 Nottingham Ave. — Range and hood" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Living and dining"><img src="nottingham-living.webp" alt="310 Nottingham Ave. — Living and dining" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Family room"><img src="nottingham-family.webp" alt="310 Nottingham Ave. — Family room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Great room"><img src="nottingham-great-room.webp" alt="310 Nottingham Ave. — Great room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Dining room"><img src="nottingham-dining.webp" alt="310 Nottingham Ave. — Dining room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Staircase"><img src="nottingham-stair.webp" alt="310 Nottingham Ave. — Staircase" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Primary bath"><img src="nottingham-primary-bath.webp" alt="310 Nottingham Ave. — Primary bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Primary shower"><img src="nottingham-primary-shower.webp" alt="310 Nottingham Ave. — Primary shower" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Second bath"><img src="nottingham-bath2.webp" alt="310 Nottingham Ave. — Second bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Walk-in closet"><img src="nottingham-closet.webp" alt="310 Nottingham Ave. — Walk-in closet" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Second-floor laundry"><img src="nottingham-laundry.webp" alt="310 Nottingham Ave. — Second-floor laundry" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Lower level"><img src="nottingham-rec.webp" alt="310 Nottingham Ave. — Lower level" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Lower level wet bar"><img src="nottingham-wetbar.webp" alt="310 Nottingham Ave. — Lower level wet bar" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Covered patio"><img src="nottingham-patio.webp" alt="310 Nottingham Ave. — Covered patio" loading="lazy"></div><div class="shot shot-wide" onclick="openLb(this)" data-cap="Rear elevation"><img src="nottingham-rear.webp" alt="310 Nottingham Ave. — Rear elevation" loading="lazy"></div></div>
+  </div>
+</section>
+<section class="listing alt" id="fontana-2550">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-progress">Under Construction</span>
+        <h2>2550 Fontana Dr.</h2>
+        <div class="listing-loc">Glenview, IL</div>
+        <p class="listing-blurb">Under construction in Glenview. Finishes are still being selected, so there is room to shape the kitchen, baths and flooring around how you actually want to live in it.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Inquire About This Home</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Under construction</div></div><div class="spec-cell"><div class="spec-key">Location</div><div class="spec-val">Glenview, IL</div></div><div class="spec-cell"><div class="spec-key">Availability</div><div class="spec-val">Ask about reserving</div></div><div class="spec-cell"><div class="spec-key">Finishes</div><div class="spec-val">Selectable</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Exterior"><img src="2550.webp" alt="2550 Fontana Dr. — Exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+  </div>
+</section>
+<section class="listing" id="fifteenth">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-progress">In Progress</span>
+        <h2>215 15th Street</h2>
+        <div class="listing-loc">Wilmette, IL</div>
+        <p class="listing-blurb">In progress in Wilmette. Photography goes up as the build comes together.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Ask About This Build</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">In progress</div></div><div class="spec-cell"><div class="spec-key">Location</div><div class="spec-val">Wilmette, IL</div></div><div class="spec-cell"><div class="spec-key">Availability</div><div class="spec-val">Ask about reserving</div></div><div class="spec-cell"><div class="spec-key">Photos</div><div class="spec-val">Coming soon</div></div></div>
+    </div>
+    <div class="shots"><div class="shot-note">Photography for this build is coming soon.</div></div>
+  </div>
+</section>
+<section class="listing alt" id="pleasant">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-sold">Sold — $1,840,000</span>
+        <h2>900 Pleasant Ln.</h2>
+        <div class="listing-loc">East Glenview, IL · Glen Oak Acres</div>
+        <p class="listing-blurb">A six-bedroom contemporary in Glen Oak Acres, and the largest home on this list at just over 5,000 square feet. Sold in 2025.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,840,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">6</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">5,082</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="pleasant.jpg" alt="900 Pleasant Ln. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+  </div>
+</section>
+<section class="listing" id="lincoln">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-sold">Sold — $1,450,000</span>
+        <h2>135 Lincoln Ave.</h2>
+        <div class="listing-loc">Glenview, IL · Park Manor</div>
+        <p class="listing-blurb">A five-bedroom contemporary in Park Manor with black windows against white siding. Sold in 2025.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,450,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,300</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="lincoln.webp" alt="135 Lincoln Ave. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+  </div>
+</section>
+<section class="listing alt" id="churchill">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-sold">Sold — $1,799,000</span>
+        <h2>264 Churchill St.</h2>
+        <div class="listing-loc">Northfield, IL</div>
+        <p class="listing-blurb">Five bedrooms over 4,100 square feet in Northfield. Sold in 2025.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,799,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,100</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="churchill.jpg" alt="264 Churchill St. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+  </div>
+</section>
+<section class="listing" id="fontana-2442">
+  <div class="listing-inner">
+    <div class="listing-head">
+      <div>
+        <span class="project-status status-sold">Sold — $1,600,000</span>
+        <h2>2442 Fontana Dr.</h2>
+        <div class="listing-loc">Glenview, IL</div>
+        <p class="listing-blurb">Modern farmhouse design with luxury finishes: custom cabinetry, Viking appliances, marble tile and white oak hardwood throughout. Sold in 2025.</p>
+        <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
+      </div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,600,000</div></div><div class="spec-cell"><div class="spec-key">Location</div><div class="spec-val">Glenview, IL</div></div><div class="spec-cell"><div class="spec-key">Style</div><div class="spec-val">Modern farmhouse</div></div></div>
+    </div>
+    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="fontana-exterior.jpg" alt="2442 Fontana Dr. — Front exterior" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen"><img src="fontana-kitchen1.jpg" alt="2442 Fontana Dr. — Kitchen" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen detail"><img src="fontana-kitchen2.jpg" alt="2442 Fontana Dr. — Kitchen detail" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Foyer"><img src="fontana-foyer.jpg" alt="2442 Fontana Dr. — Foyer" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Bath"><img src="fontana-bath1.jpg" alt="2442 Fontana Dr. — Bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Bath detail"><img src="fontana-bath2.jpg" alt="2442 Fontana Dr. — Bath detail" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Master bath"><img src="fontana-master-bath.jpg" alt="2442 Fontana Dr. — Master bath" loading="lazy"></div><div class="shot shot-wide" onclick="openLb(this)" data-cap="Master shower"><img src="fontana-shower.jpg" alt="2442 Fontana Dr. — Master shower" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="contact-section" style="border-top:1px solid var(--light);">
+  <div class="listing-inner" style="text-align:center;">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Interested in one of these?</h2>
+    <p style="font-size:15px;color:var(--gray);line-height:1.8;margin:1rem auto 2rem;max-width:520px;">
+      Whether you are buying, building custom, or renovating — we would love to hear from you. We respond within 24 hours.</p>
+    <a href="index.html#contact" class="btn-gold">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">DSP Renovation</div>
+  <p>© 2026 DSP Renovation, LLC. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://instagram.com/dsp.reno/" target="_blank">Instagram</a>
+    <a href="tel:2247669642">(224) 766-9642</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" onclick="if(event.target===this)closeLb()">
+  <button class="lb-close" onclick="closeLb()" aria-label="Close">✕</button>
+  <button class="lb-prev" onclick="stepLb(-1)" aria-label="Previous">‹</button>
+  <img id="lb-img" alt="">
+  <button class="lb-next" onclick="stepLb(1)" aria-label="Next">›</button>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+  // Clicking a photo opens it full screen; arrows move within that home's set.
+  let lbShots = [], lbAt = 0;
+  function openLb(el) {
+    lbShots = [...el.parentElement.querySelectorAll('.shot')];
+    lbAt = lbShots.indexOf(el);
+    showLb();
+    document.getElementById('lb').classList.add('open');
+  }
+  function showLb() {
+    const el = lbShots[lbAt];
+    document.getElementById('lb-img').src = el.querySelector('img').src;
+    document.getElementById('lb-cap').textContent = el.dataset.cap || '';
+  }
+  function stepLb(n) { lbAt = (lbAt + n + lbShots.length) % lbShots.length; showLb(); }
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+    document.getElementById('lb-img').removeAttribute('src');
+  }
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lb').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') stepLb(-1);
+    if (e.key === 'ArrowRight') stepLb(1);
+  });
+</script>
+</body>
+</html>
