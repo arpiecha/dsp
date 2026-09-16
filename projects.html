@@ -223,18 +223,6 @@
     .shot-note { grid-column:1/-1;font-size:12px;color:var(--gray);padding-top:6px; }
     .listing-cta { margin-top:2rem; }
 
-    /* lightbox */
-    .lb { position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:2000; }
-    .lb.open { display:flex; }
-    .lb img { max-width:92vw;max-height:84vh;object-fit:contain; }
-    .lb-close,.lb-prev,.lb-next { position:absolute;background:rgba(255,255,255,0.12);color:white;border:none;cursor:pointer;
-                                  font-size:22px;line-height:1;padding:12px 16px;border-radius:3px;font-family:inherit; }
-    .lb-close { top:20px;right:20px;font-size:18px; }
-    .lb-prev { left:20px;top:50%;transform:translateY(-50%); }
-    .lb-next { right:20px;top:50%;transform:translateY(-50%); }
-    .lb-close:hover,.lb-prev:hover,.lb-next:hover { background:rgba(255,255,255,0.25); }
-    .lb-cap { position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.75);font-size:12px;letter-spacing:0.06em; }
-
     @media (max-width:900px) {
       .page-head { padding:6rem 1.5rem 1.5rem; }
       .listing-inner { padding:0 1.5rem; }
@@ -280,9 +268,9 @@
         <p class="listing-blurb">Newly built and move-in ready. White oak hardwood throughout, custom cabinetry with a quartz island and Wolf range, a primary suite with a soaking tub and marble bath, second-floor laundry, and a finished lower level with a wet bar opening to a fenced yard and covered patio.</p>
         <div class="listing-cta"><a href="index.html#contact" class="view-all">Schedule a Showing</a></div>
       </div>
-      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">For sale</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Full baths</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,848</div></div><div class="spec-cell"><div class="spec-key">Garage</div><div class="spec-val">3-car attached</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2026</div></div></div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">For sale</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Full baths</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,848</div></div><div class="spec-cell"><div class="spec-key">Garage</div><div class="spec-val">3-car attached</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="nottingham-exterior.webp" alt="310 Nottingham Ave. — Front exterior" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen"><img src="nottingham-kitchen.webp" alt="310 Nottingham Ave. — Kitchen" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Range and hood"><img src="nottingham-range.webp" alt="310 Nottingham Ave. — Range and hood" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Living and dining"><img src="nottingham-living.webp" alt="310 Nottingham Ave. — Living and dining" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Family room"><img src="nottingham-family.webp" alt="310 Nottingham Ave. — Family room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Great room"><img src="nottingham-great-room.webp" alt="310 Nottingham Ave. — Great room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Dining room"><img src="nottingham-dining.webp" alt="310 Nottingham Ave. — Dining room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Staircase"><img src="nottingham-stair.webp" alt="310 Nottingham Ave. — Staircase" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Primary bath"><img src="nottingham-primary-bath.webp" alt="310 Nottingham Ave. — Primary bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Primary shower"><img src="nottingham-primary-shower.webp" alt="310 Nottingham Ave. — Primary shower" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Second bath"><img src="nottingham-bath2.webp" alt="310 Nottingham Ave. — Second bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Walk-in closet"><img src="nottingham-closet.webp" alt="310 Nottingham Ave. — Walk-in closet" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Second-floor laundry"><img src="nottingham-laundry.webp" alt="310 Nottingham Ave. — Second-floor laundry" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Lower level"><img src="nottingham-rec.webp" alt="310 Nottingham Ave. — Lower level" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Lower level wet bar"><img src="nottingham-wetbar.webp" alt="310 Nottingham Ave. — Lower level wet bar" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Covered patio"><img src="nottingham-patio.webp" alt="310 Nottingham Ave. — Covered patio" loading="lazy"></div><div class="shot shot-wide" onclick="openLb(this)" data-cap="Rear elevation"><img src="nottingham-rear.webp" alt="310 Nottingham Ave. — Rear elevation" loading="lazy"></div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="nottingham-exterior.webp" alt="310 Nottingham Ave. — Front exterior" data-caption="310 Nottingham Ave. — Front exterior" loading="lazy"></div><div class="shot"><img src="nottingham-kitchen.webp" alt="310 Nottingham Ave. — Kitchen" data-caption="310 Nottingham Ave. — Kitchen" loading="lazy"></div><div class="shot"><img src="nottingham-range.webp" alt="310 Nottingham Ave. — Range and hood" data-caption="310 Nottingham Ave. — Range and hood" loading="lazy"></div><div class="shot"><img src="nottingham-living.webp" alt="310 Nottingham Ave. — Living and dining" data-caption="310 Nottingham Ave. — Living and dining" loading="lazy"></div><div class="shot"><img src="nottingham-family.webp" alt="310 Nottingham Ave. — Family room" data-caption="310 Nottingham Ave. — Family room" loading="lazy"></div><div class="shot"><img src="nottingham-great-room.webp" alt="310 Nottingham Ave. — Great room" data-caption="310 Nottingham Ave. — Great room" loading="lazy"></div><div class="shot"><img src="nottingham-dining.webp" alt="310 Nottingham Ave. — Dining room" data-caption="310 Nottingham Ave. — Dining room" loading="lazy"></div><div class="shot"><img src="nottingham-stair.webp" alt="310 Nottingham Ave. — Staircase" data-caption="310 Nottingham Ave. — Staircase" loading="lazy"></div><div class="shot"><img src="nottingham-primary-bath.webp" alt="310 Nottingham Ave. — Primary bath" data-caption="310 Nottingham Ave. — Primary bath" loading="lazy"></div><div class="shot"><img src="nottingham-primary-shower.webp" alt="310 Nottingham Ave. — Primary shower" data-caption="310 Nottingham Ave. — Primary shower" loading="lazy"></div><div class="shot"><img src="nottingham-bath2.webp" alt="310 Nottingham Ave. — Second bath" data-caption="310 Nottingham Ave. — Second bath" loading="lazy"></div><div class="shot"><img src="nottingham-closet.webp" alt="310 Nottingham Ave. — Walk-in closet" data-caption="310 Nottingham Ave. — Walk-in closet" loading="lazy"></div><div class="shot"><img src="nottingham-laundry.webp" alt="310 Nottingham Ave. — Second-floor laundry" data-caption="310 Nottingham Ave. — Second-floor laundry" loading="lazy"></div><div class="shot"><img src="nottingham-rec.webp" alt="310 Nottingham Ave. — Lower level" data-caption="310 Nottingham Ave. — Lower level" loading="lazy"></div><div class="shot"><img src="nottingham-wetbar.webp" alt="310 Nottingham Ave. — Lower level wet bar" data-caption="310 Nottingham Ave. — Lower level wet bar" loading="lazy"></div><div class="shot"><img src="nottingham-patio.webp" alt="310 Nottingham Ave. — Covered patio" data-caption="310 Nottingham Ave. — Covered patio" loading="lazy"></div><div class="shot shot-wide"><img src="nottingham-rear.webp" alt="310 Nottingham Ave. — Rear elevation" data-caption="310 Nottingham Ave. — Rear elevation" loading="lazy"></div></div>
   </div>
 </section>
 <section class="listing alt" id="fontana-2550">
@@ -297,7 +285,7 @@
       </div>
       <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Under construction</div></div><div class="spec-cell"><div class="spec-key">Location</div><div class="spec-val">Glenview, IL</div></div><div class="spec-cell"><div class="spec-key">Availability</div><div class="spec-val">Ask about reserving</div></div><div class="spec-cell"><div class="spec-key">Finishes</div><div class="spec-val">Selectable</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Exterior"><img src="2550.webp" alt="2550 Fontana Dr. — Exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="2550.webp" alt="2550 Fontana Dr. — Exterior" data-caption="2550 Fontana Dr. — Exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
   </div>
 </section>
 <section class="listing" id="fifteenth">
@@ -322,12 +310,12 @@
         <span class="project-status status-sold">Sold — $1,840,000</span>
         <h2>900 Pleasant Ln.</h2>
         <div class="listing-loc">East Glenview, IL · Glen Oak Acres</div>
-        <p class="listing-blurb">A six-bedroom contemporary in Glen Oak Acres, and the largest home on this list at just over 5,000 square feet. Sold in 2025.</p>
+        <p class="listing-blurb">A six-bedroom contemporary in Glen Oak Acres, and the largest home on this list at just over 5,000 square feet.</p>
         <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
       </div>
-      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,840,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">6</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">5,082</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,840,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">6</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">5,082</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="pleasant.jpg" alt="900 Pleasant Ln. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="pleasant.jpg" alt="900 Pleasant Ln. — Front exterior" data-caption="900 Pleasant Ln. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
   </div>
 </section>
 <section class="listing" id="lincoln">
@@ -337,12 +325,12 @@
         <span class="project-status status-sold">Sold — $1,450,000</span>
         <h2>135 Lincoln Ave.</h2>
         <div class="listing-loc">Glenview, IL · Park Manor</div>
-        <p class="listing-blurb">A five-bedroom contemporary in Park Manor with black windows against white siding. Sold in 2025.</p>
+        <p class="listing-blurb">A five-bedroom contemporary in Park Manor with black windows against white siding.</p>
         <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
       </div>
-      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,450,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,300</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,450,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,300</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="lincoln.webp" alt="135 Lincoln Ave. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="lincoln.webp" alt="135 Lincoln Ave. — Front exterior" data-caption="135 Lincoln Ave. — Front exterior" loading="lazy"></div><div class="shot-note">More photos of this home are available — ask and we will send the full set.</div></div>
   </div>
 </section>
 <section class="listing alt" id="churchill">
@@ -352,12 +340,12 @@
         <span class="project-status status-sold">Sold — $1,799,000</span>
         <h2>264 Churchill St.</h2>
         <div class="listing-loc">Northfield, IL</div>
-        <p class="listing-blurb">Five bedrooms over 4,100 square feet in Northfield. Sold in 2025.</p>
+        <p class="listing-blurb">Five bedrooms over 4,100 square feet in Northfield.</p>
         <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
       </div>
-      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,799,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,100</div></div><div class="spec-cell"><div class="spec-key">Built</div><div class="spec-val">2025</div></div></div>
+      <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,799,000</div></div><div class="spec-cell"><div class="spec-key">Bedrooms</div><div class="spec-val">5</div></div><div class="spec-cell"><div class="spec-key">Baths</div><div class="spec-val">4.5</div></div><div class="spec-cell"><div class="spec-key">Square feet</div><div class="spec-val">4,100</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="churchill.webp" alt="264 Churchill St. — Front exterior" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen"><img src="churchill-kitchen.webp" alt="264 Churchill St. — Kitchen" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen and island"><img src="churchill-kitchen2.webp" alt="264 Churchill St. — Kitchen and island" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Great room"><img src="churchill-great-room.webp" alt="264 Churchill St. — Great room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Living room"><img src="churchill-living.webp" alt="264 Churchill St. — Living room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Fireplace and stair"><img src="churchill-fireplace.webp" alt="264 Churchill St. — Fireplace and stair" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Family room"><img src="churchill-family.webp" alt="264 Churchill St. — Family room" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Staircase"><img src="churchill-stair.webp" alt="264 Churchill St. — Staircase" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Primary bath"><img src="churchill-primary-bath.webp" alt="264 Churchill St. — Primary bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Bath"><img src="churchill-bath.webp" alt="264 Churchill St. — Bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Wet bar"><img src="churchill-bar.webp" alt="264 Churchill St. — Wet bar" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Front elevation"><img src="churchill-front.webp" alt="264 Churchill St. — Front elevation" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Covered patio"><img src="churchill-patio.webp" alt="264 Churchill St. — Covered patio" loading="lazy"></div><div class="shot shot-wide" onclick="openLb(this)" data-cap="Rear exterior"><img src="churchill-rear.webp" alt="264 Churchill St. — Rear exterior" loading="lazy"></div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="churchill.webp" alt="264 Churchill St. — Front exterior" data-caption="264 Churchill St. — Front exterior" loading="lazy"></div><div class="shot"><img src="churchill-kitchen.webp" alt="264 Churchill St. — Kitchen" data-caption="264 Churchill St. — Kitchen" loading="lazy"></div><div class="shot"><img src="churchill-kitchen2.webp" alt="264 Churchill St. — Kitchen and island" data-caption="264 Churchill St. — Kitchen and island" loading="lazy"></div><div class="shot"><img src="churchill-great-room.webp" alt="264 Churchill St. — Great room" data-caption="264 Churchill St. — Great room" loading="lazy"></div><div class="shot"><img src="churchill-living.webp" alt="264 Churchill St. — Living room" data-caption="264 Churchill St. — Living room" loading="lazy"></div><div class="shot"><img src="churchill-fireplace.webp" alt="264 Churchill St. — Fireplace and stair" data-caption="264 Churchill St. — Fireplace and stair" loading="lazy"></div><div class="shot"><img src="churchill-family.webp" alt="264 Churchill St. — Family room" data-caption="264 Churchill St. — Family room" loading="lazy"></div><div class="shot"><img src="churchill-stair.webp" alt="264 Churchill St. — Staircase" data-caption="264 Churchill St. — Staircase" loading="lazy"></div><div class="shot"><img src="churchill-primary-bath.webp" alt="264 Churchill St. — Primary bath" data-caption="264 Churchill St. — Primary bath" loading="lazy"></div><div class="shot"><img src="churchill-bath.webp" alt="264 Churchill St. — Bath" data-caption="264 Churchill St. — Bath" loading="lazy"></div><div class="shot"><img src="churchill-bar.webp" alt="264 Churchill St. — Wet bar" data-caption="264 Churchill St. — Wet bar" loading="lazy"></div><div class="shot"><img src="churchill-front.webp" alt="264 Churchill St. — Front elevation" data-caption="264 Churchill St. — Front elevation" loading="lazy"></div><div class="shot"><img src="churchill-patio.webp" alt="264 Churchill St. — Covered patio" data-caption="264 Churchill St. — Covered patio" loading="lazy"></div><div class="shot shot-wide"><img src="churchill-rear.webp" alt="264 Churchill St. — Rear exterior" data-caption="264 Churchill St. — Rear exterior" loading="lazy"></div></div>
   </div>
 </section>
 <section class="listing" id="fontana-2442">
@@ -367,12 +355,12 @@
         <span class="project-status status-sold">Sold — $1,600,000</span>
         <h2>2442 Fontana Dr.</h2>
         <div class="listing-loc">Glenview, IL</div>
-        <p class="listing-blurb">Modern farmhouse design with luxury finishes: custom cabinetry, Viking appliances, marble tile and white oak hardwood throughout. Sold in 2025.</p>
+        <p class="listing-blurb">Modern farmhouse design with luxury finishes: custom cabinetry, Viking appliances, marble tile and white oak hardwood throughout.</p>
         <div class="listing-cta"><a href="index.html#contact" class="view-all">Build Something Like This</a></div>
       </div>
       <div class="spec-table"><div class="spec-cell"><div class="spec-key">Status</div><div class="spec-val">Sold</div></div><div class="spec-cell"><div class="spec-key">Sale price</div><div class="spec-val">$1,600,000</div></div><div class="spec-cell"><div class="spec-key">Location</div><div class="spec-val">Glenview, IL</div></div><div class="spec-cell"><div class="spec-key">Style</div><div class="spec-val">Modern farmhouse</div></div></div>
     </div>
-    <div class="shots"><div class="shot shot-lead" onclick="openLb(this)" data-cap="Front exterior"><img src="fontana-exterior.jpg" alt="2442 Fontana Dr. — Front exterior" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen"><img src="fontana-kitchen1.jpg" alt="2442 Fontana Dr. — Kitchen" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Kitchen detail"><img src="fontana-kitchen2.jpg" alt="2442 Fontana Dr. — Kitchen detail" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Foyer"><img src="fontana-foyer.jpg" alt="2442 Fontana Dr. — Foyer" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Bath"><img src="fontana-bath1.jpg" alt="2442 Fontana Dr. — Bath" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Bath detail"><img src="fontana-bath2.jpg" alt="2442 Fontana Dr. — Bath detail" loading="lazy"></div><div class="shot" onclick="openLb(this)" data-cap="Master bath"><img src="fontana-master-bath.jpg" alt="2442 Fontana Dr. — Master bath" loading="lazy"></div><div class="shot shot-wide" onclick="openLb(this)" data-cap="Master shower"><img src="fontana-shower.jpg" alt="2442 Fontana Dr. — Master shower" loading="lazy"></div></div>
+    <div class="shots"><div class="shot shot-lead"><img src="fontana-exterior.jpg" alt="2442 Fontana Dr. — Front exterior" data-caption="2442 Fontana Dr. — Front exterior" loading="lazy"></div><div class="shot"><img src="fontana-kitchen1.jpg" alt="2442 Fontana Dr. — Kitchen" data-caption="2442 Fontana Dr. — Kitchen" loading="lazy"></div><div class="shot"><img src="fontana-kitchen2.jpg" alt="2442 Fontana Dr. — Kitchen detail" data-caption="2442 Fontana Dr. — Kitchen detail" loading="lazy"></div><div class="shot"><img src="fontana-foyer.jpg" alt="2442 Fontana Dr. — Foyer" data-caption="2442 Fontana Dr. — Foyer" loading="lazy"></div><div class="shot"><img src="fontana-bath1.jpg" alt="2442 Fontana Dr. — Bath" data-caption="2442 Fontana Dr. — Bath" loading="lazy"></div><div class="shot"><img src="fontana-bath2.jpg" alt="2442 Fontana Dr. — Bath detail" data-caption="2442 Fontana Dr. — Bath detail" loading="lazy"></div><div class="shot"><img src="fontana-master-bath.jpg" alt="2442 Fontana Dr. — Master bath" data-caption="2442 Fontana Dr. — Master bath" loading="lazy"></div><div class="shot shot-wide"><img src="fontana-shower.jpg" alt="2442 Fontana Dr. — Master shower" data-caption="2442 Fontana Dr. — Master shower" loading="lazy"></div></div>
   </div>
 </section>
 
@@ -395,39 +383,6 @@
   </div>
 </footer>
 
-<div class="lb" id="lb" onclick="if(event.target===this)closeLb()">
-  <button class="lb-close" onclick="closeLb()" aria-label="Close">✕</button>
-  <button class="lb-prev" onclick="stepLb(-1)" aria-label="Previous">‹</button>
-  <img id="lb-img" alt="">
-  <button class="lb-next" onclick="stepLb(1)" aria-label="Next">›</button>
-  <div class="lb-cap" id="lb-cap"></div>
-</div>
-
-<script>
-  // Clicking a photo opens it full screen; arrows move within that home's set.
-  let lbShots = [], lbAt = 0;
-  function openLb(el) {
-    lbShots = [...el.parentElement.querySelectorAll('.shot')];
-    lbAt = lbShots.indexOf(el);
-    showLb();
-    document.getElementById('lb').classList.add('open');
-  }
-  function showLb() {
-    const el = lbShots[lbAt];
-    document.getElementById('lb-img').src = el.querySelector('img').src;
-    document.getElementById('lb-cap').textContent = el.dataset.cap || '';
-  }
-  function stepLb(n) { lbAt = (lbAt + n + lbShots.length) % lbShots.length; showLb(); }
-  function closeLb() {
-    document.getElementById('lb').classList.remove('open');
-    document.getElementById('lb-img').removeAttribute('src');
-  }
-  document.addEventListener('keydown', e => {
-    if (!document.getElementById('lb').classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') stepLb(-1);
-    if (e.key === 'ArrowRight') stepLb(1);
-  });
-</script>
+<script src="gallery.js" defer></script>
 </body>
 </html>
